@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <form action="">
+            <input class="input" type="text" name="value"> <input class="btn-click" type="button" value="ADD">
+    </form>
+    <div class="lists">
+        <ul class="task"></ul>
+    </div>
+    
+    <script>
+        const btn_click= document.querySelector('.btn-click');
+        btn_click.addEventListener('click', addList);
+        let input ="";
+        let list = [];;
+        
+    function addList(){
+        input = document.querySelector('.input').value;
+        list.push(input);
+        console.log(list);
+        showList();
+    }
+        function showList(){
+        let task = document.querySelector('.task');
+        let task_list = document.createElement('li'); 
+        let add_list = document.createTextNode(spliceList());
+        task.appendChild(task_list);
+        task_list.appendChild(add_list);
+    }
+
+    function spliceList(){
+        console.log();
+        //var singlelist;
+        for(var i = 0; i < list.length; i++){ 
+             (list[i] + 'br');
+
+           // console.log( );
+            //console.log(list[i] + "<br>");
+
+        }
+
+      
+
+    }
+
+    
+
+
+    </script>
+</body>
+</html>

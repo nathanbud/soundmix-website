@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+
+
+    <label for="">Name</label>
+    <input id="username" name="username" type="text">
+<label for="">password</label>
+<input id="password" type="password" name="" id="">
+<input id="button" type="button" value="SUBMIT">
+
+ <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+        </div> 
+
+    <script>
+    var database = [
+	{
+		username: "pedro",
+		password: "111"
+	},
+	{
+		username: "juan",
+		password: "222"
+	},
+	{
+		username: "kanor",
+		password: "333"
+	},
+	{
+		username: "tunying",
+		password: "444"
+	}
+];
+
+var fbPost = [
+	{
+		Name: "lorenzo",
+		Timeline: "Ukininam john!!! Naggwapo ni darryl!!"
+	},
+	{
+		Name: "john",
+		Timeline: "ukininam met lorenzo nagcute ni darryl!"
+	},
+	{
+		Name: "darryl",
+		Timeline: "nag gwapo nak"
+	}
+];
+
+var button = document.querySelector("#button");
+var username = document.querySelector("#username");
+var password = document.querySelector("#password");
+
+function isUserValid(){
+	for(var i = 0; i < database.length; i++){
+		if(username.value === database[i].username &&
+			password.value === database[i].password){
+			return true;
+		}
+	} return false;
+}
+
+function signIn(){
+	if(isUserValid()){
+
+     //  var p = document.createElement("p");
+var element = document.getElementById("div1");
+var lists = document.createElement("ul");
+var list = document.createElement("li");
+element.appendChild(lists);
+list.appendChild(list);
+
+       // (fbPost);
+	} else {
+		alert("Wrong username and password");
+	}
+}
+
+username.addEventListener("keypress", function(event){
+	if(event.keyCode === 13){
+		button.click();
+	}
+});
+
+password.addEventListener("keypress", function(event){
+	if(event.keyCode === 13){
+		button.click();
+	}
+});
+
+button.addEventListener("click", signIn);    
+    </script>
+</body>
+</html>
